@@ -9,31 +9,33 @@ l2 = ListNode(5, ListNode(6, ListNode(4)))
 first = []
 
 
-
 class Solution:
     def addTwoNumbers(self, l1: ListNode | None, l2: ListNode | None) -> ListNode | None:
+        start = ListNode(0)
+        sista = start
         vidare = 0
-        while l1 is not None:
-            
 
-            if l1.val+l2.val < 10:
-                first.append(l1.val + l2.val + vidare)
-                print("1")
-            elif vidare <= 1:
-                first.append((l1.val + l2.val) % 10)
-                vidare = ((l1.val + l2.val) // 10) 
-                print("2")
-            else:
-                vidare = ((l1.val + l2.val) // 10)
-                first.append((l1.val + l2.val) % 10) 
-                print("3")
-            l1 = l1.next    
-            l2 = l2.next
-        result = int("".join(map(str, first)))
+        while l1 is not None or l2 is not None or vidare != 0:
+            tal1 = 0
+            tal2 = 0
 
-        print(result)
+            if l1 is not None:
+                tal1 = l1.val
+                l1 = l1.next
+
+            if l2 is not None:
+                tal2 = l2.val
+                l2 = l2.next
+
+            summa = tal1 + tal2 + vidare
+            siffra = summa % 10
+            vidare = summa // 10
+
+            sista.next = ListNode(siffra)
+            sista = sista.next
+
+        return start.next
 
 lösning = Solution()
 lösning.addTwoNumbers(l1, l2)
-
 
