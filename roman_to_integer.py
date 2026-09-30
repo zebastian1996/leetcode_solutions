@@ -1,58 +1,75 @@
 #ska skriva om siffror till tal
 
 
+s = "III"
+s = "LVIII"
+s = "DCXXI"
+s = "MMCCCXCIX"
+s = "MCMXCIV"
+# I=1
+# V=5
+# X=10
+# L=50
+# C=100
+# D=500
+# M=1000
 
 
-I=1
-V=5
-X=10
-L=50
-C=100
-D=500
-M=1000
+b = 0
+siffra = 0
+for i in s[::-1]:
+    if i == "M":
+        b += 1000
+        if siffra > 1000:
+            siffra = 1000
+            b -= 2000
+        else:
+            siffra = 1000
+    elif i == "D":
+        b += 500
+        if siffra > 500:
+            siffra = 500
+            b -= 400
+        else:
+            siffra = 500
+    
+    elif i == "C":
+        b += 100
+        if siffra > 100:
+            siffra = 100
+            b -= 200
+        else:
+            siffra = 100
 
-iv=4
 
-# Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+    elif i == "L":
+        b += 50
+        if siffra > 51:
+            b -= 100
+            siffa = 50
+        else:
+            siffra = 50
 
-# Symbol       Value
-# I             1
-# V             5
-# X             10
-# L             50
-# C             100
-# D             500
-# M             1000
-# For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
+    elif i == "X":
+        b += 10
+        if siffra > 11:
+            siffra = 10
+            b -= 20
+        else:
+            siffra = 10
 
-# Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
+    elif i == "V":
+        b += 5
+        if siffra > 6:
+            siffra = 5
+            b -= 10
+        else:
+            siffra = 5
 
-# I can be placed before V (5) and X (10) to make 4 and 9. 
-# X can be placed before L (50) and C (100) to make 40 and 90. 
-# C can be placed before D (500) and M (1000) to make 400 and 900.
-# Given a roman numeral, convert it to an integer.
+    elif i == "I":
+        b += 1
+        if siffra > 2:
+            siffra = 1
+            b -= 2      
 
- 
-
-# Example 1:
-
-# Input: s = "III"
-# Output: 3
-# Explanation: III = 3.
-# Example 2:
-
-# Input: s = "LVIII"
-# Output: 58
-# Explanation: L = 50, V= 5, III = 3.
-# Example 3:
-
-# Input: s = "MCMXCIV"
-# Output: 1994
-# Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
- 
-
-# Constraints:
-
-# 1 <= s.length <= 15
-# s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
-# It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+print(b)
