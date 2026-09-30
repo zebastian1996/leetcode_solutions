@@ -6,6 +6,8 @@ s = "LVIII"
 s = "DCXXI"
 s = "MMCCCXCIX"
 s = "MCMXCIV"
+
+
 # I=1
 # V=5
 # X=10
@@ -72,4 +74,36 @@ for i in s[::-1]:
             siffra = 1
             b -= 2      
 
-print(b)
+    print(b)
+
+
+
+#uppdaterad version med hjälp och kolla upp
+
+
+s = "MCMXCIV"
+
+translation = {
+    "I":1,
+    "V":5,
+    "X":10,
+    "L":50,
+    "C":100,
+    "D":500,
+    "M":1000,
+}
+
+
+summan = 0
+pre_num = 0
+for i in s[::-1]:
+    värdet = translation[i]
+    
+    if värdet >= pre_num:
+        summan += värdet    
+    else:
+        print("minus")
+        summan -= värdet
+        
+    pre_num = värdet
+    print("summa",summan)
