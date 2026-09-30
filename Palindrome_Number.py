@@ -21,3 +21,21 @@ class Solution:
 
 lösning = Solution()
 print(lösning.isPalindrome(x))
+
+
+#nya förbättrade versionen
+
+
+
+
+x = 123
+x = 121
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        nuvarande = str(x)
+        reverse = nuvarande[::-1]
+
+        return nuvarande == reverse
+
+lösning = Solution()
+print(lösning.isPalindrome(x))
