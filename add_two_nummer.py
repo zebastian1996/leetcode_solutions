@@ -1,3 +1,6 @@
+
+
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -5,9 +8,6 @@ class ListNode:
 
 l1 = ListNode(2, ListNode(4, ListNode(3)))
 l2 = ListNode(5, ListNode(6, ListNode(4)))
-
-first = []
-
 
 class Solution:
     def addTwoNumbers(self, l1: ListNode | None, l2: ListNode | None) -> ListNode | None:
