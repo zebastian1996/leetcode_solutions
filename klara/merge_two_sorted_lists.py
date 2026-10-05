@@ -5,12 +5,6 @@ class ListNode:
 
 list1 = ListNode(1, ListNode(2, ListNode(4)))
 list2 = ListNode(1, ListNode(3, ListNode(4)))
-
-class Solution:
-    def mergeTwoLists(self, list1: ListNode | None, list2: ListNode | None) -> ListNode | None:
-        start = ListNode(0)
-        nummer = start
-        siffra = 0
  
 class Solution:
     def mergeTwoLists(self, list1: ListNode | None, list2: ListNode | None) -> ListNode | None:
